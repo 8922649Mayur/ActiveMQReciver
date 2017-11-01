@@ -3,7 +3,6 @@ package Test;
 import java.util.Date;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import javax.jms.JMSException;
@@ -22,8 +21,7 @@ public class MessageReciver {
 
 		System.out.println("The time is : " + new Date());
 
-		ScheduledFuture<?> result = executor.scheduleAtFixedRate(task1, 1, 1,
-				TimeUnit.SECONDS);
+		executor.scheduleAtFixedRate(task1, 1, 1,TimeUnit.SECONDS);
 
 		try {
 			TimeUnit.HOURS.sleep(1);
